@@ -32,6 +32,27 @@
             table-layout: auto;
             width: 100%;
         }
+
+        /* En móviles se ocultan las columnas PG, PE y PP de las tablas de clasificación */
+        @media (max-width: 767px) {
+            .tabla-post-a th:nth-child(5),
+            .tabla-post-a td:nth-child(5),
+            .tabla-post-a th:nth-child(6),
+            .tabla-post-a td:nth-child(6),
+            .tabla-post-a th:nth-child(7),
+            .tabla-post-a td:nth-child(7) {
+                display: none;
+            }
+
+            .tabla-post-b th:nth-child(6),
+            .tabla-post-b td:nth-child(6),
+            .tabla-post-b th:nth-child(7),
+            .tabla-post-b td:nth-child(7),
+            .tabla-post-b th:nth-child(8),
+            .tabla-post-b td:nth-child(8) {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen pb-16 custom-scrollbar selection:bg-cyan-500 selection:text-slate-900">
@@ -159,7 +180,7 @@
                     </div>
 
                     <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left">
+                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-a">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -244,7 +265,7 @@
                     </div>
 
                     <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left">
+                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-a">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -319,7 +340,7 @@
                     </div>
 
                     <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left">
+                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-a">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -350,7 +371,7 @@
                 </div>
 
                 <div class="w-full" style="overflow-x: auto;">
-                    <table class="text-[11px] leading-tight text-left">
+                    <table class="text-[11px] leading-tight text-left tabla-post tabla-post-b">
                         <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                             <tr>
                                 <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -404,7 +425,7 @@
                     </div>
 
                     <div class="w-full overflow-x-auto custom-scrollbar">
-                        <table class="text-[11px] leading-tight text-left min-w-[720px]">
+                        <table class="text-[11px] leading-tight text-left min-w-[720px] tabla-post tabla-post-a">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -447,7 +468,7 @@
                     </div>
 
                     <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left">
+                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-b">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
