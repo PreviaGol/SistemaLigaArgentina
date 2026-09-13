@@ -38,6 +38,14 @@
     max-width: 100%;
 }
 
+/* Ocultar DIF */
+.responsive-standings.standard th:nth-child(8),
+.responsive-standings.standard td:nth-child(8),
+.responsive-standings.nacd-final th:nth-child(9),
+.responsive-standings.nacd-final td:nth-child(9) {
+    display: none;
+}
+
 .responsive-standings th,
 .responsive-standings td {
     overflow-wrap: anywhere;
@@ -554,7 +562,7 @@
                     </div>
 
                     <div class="w-full">
-                        <table class="text-[11px] leading-tight text-left responsive-standings regional">
+                        <table class="text-[11px] leading-tight text-left responsive-standings regional nacd-final">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -915,7 +923,7 @@
 
         const provincesData = {
             caba_gba: { name: "CABA / GBA", region: "Región GBA", standings: [
-                {"name": "San Martín (B)", "pts": 68, "pj": 30, "pg": 21, "pe": 5, "pp": 4, "dif": "+32", "status": "CAMPEÓN PROVINCIAL", "badge": "bg-emerald-500/20 text-emerald-300 font-bold"},
+                {"name": "San Martín (B)", "pts": 68, "pj": 30, "pg": 21, "pe": 5, "pp": 4, "dif": "+32", "status": "CAMPEÓN / ASCENSO DIRECTO NACIONAL C", "badge": "bg-emerald-500/20 text-emerald-300 font-bold"},
                 {"name": "Ituzaingó", "pts": 63, "pj": 30, "pg": 19, "pe": 6, "pp": 5, "dif": "+25", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
                 {"name": "JJ Urquiza", "pts": 59, "pj": 30, "pg": 18, "pe": 5, "pp": 7, "dif": "+20", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
                 {"name": "Liniers", "pts": 55, "pj": 30, "pg": 16, "pe": 7, "pp": 7, "dif": "+14", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
