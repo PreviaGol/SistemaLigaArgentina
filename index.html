@@ -32,27 +32,113 @@
             table-layout: auto;
             width: 100%;
         }
+/* Tablas responsive */
+.responsive-standings {
+    width: 100%;
+    max-width: 100%;
+}
 
-        /* En móviles se ocultan las columnas PG, PE y PP de las tablas de clasificación */
-        @media (max-width: 767px) {
-            .tabla-post-a th:nth-child(5),
-            .tabla-post-a td:nth-child(5),
-            .tabla-post-a th:nth-child(6),
-            .tabla-post-a td:nth-child(6),
-            .tabla-post-a th:nth-child(7),
-            .tabla-post-a td:nth-child(7) {
-                display: none;
-            }
+.responsive-standings th,
+.responsive-standings td {
+    overflow-wrap: anywhere;
+}
 
-            .tabla-post-b th:nth-child(6),
-            .tabla-post-b td:nth-child(6),
-            .tabla-post-b th:nth-child(7),
-            .tabla-post-b td:nth-child(7),
-            .tabla-post-b th:nth-child(8),
-            .tabla-post-b td:nth-child(8) {
-                display: none;
-            }
-        }
+@media (max-width: 639px) {
+    .responsive-standings {
+        width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
+        font-size: 10px;
+    }
+
+    .responsive-standings th,
+    .responsive-standings td {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+
+    /* Tablas: # Club PTS PJ PG PE PP DIF Estado */
+    .responsive-standings.standard th:nth-child(5),
+    .responsive-standings.standard td:nth-child(5),
+    .responsive-standings.standard th:nth-child(6),
+    .responsive-standings.standard td:nth-child(6),
+    .responsive-standings.standard th:nth-child(7),
+    .responsive-standings.standard td:nth-child(7) {
+        display: none;
+    }
+
+    /* Tablas: # Club Origen PTS PJ PG PE PP Resultado */
+    .responsive-standings.regional th:nth-child(6),
+    .responsive-standings.regional td:nth-child(6),
+    .responsive-standings.regional th:nth-child(7),
+    .responsive-standings.regional td:nth-child(7),
+    .responsive-standings.regional th:nth-child(8),
+    .responsive-standings.regional td:nth-child(8) {
+        display: none;
+    }
+
+    /* Anchos tablas normales */
+    .responsive-standings.standard th:nth-child(1),
+    .responsive-standings.standard td:nth-child(1) {
+        width: 7%;
+    }
+
+    .responsive-standings.standard th:nth-child(2),
+    .responsive-standings.standard td:nth-child(2) {
+        width: 29%;
+    }
+
+    .responsive-standings.standard th:nth-child(3),
+    .responsive-standings.standard td:nth-child(3) {
+        width: 9%;
+    }
+
+    .responsive-standings.standard th:nth-child(4),
+    .responsive-standings.standard td:nth-child(4) {
+        width: 9%;
+    }
+
+    .responsive-standings.standard th:nth-child(8),
+    .responsive-standings.standard td:nth-child(8) {
+        width: 9%;
+    }
+
+    .responsive-standings.standard th:nth-child(9),
+    .responsive-standings.standard td:nth-child(9) {
+        width: 37%;
+    }
+
+    /* Anchos tablas regionales */
+    .responsive-standings.regional th:nth-child(1),
+    .responsive-standings.regional td:nth-child(1) {
+        width: 7%;
+    }
+
+    .responsive-standings.regional th:nth-child(2),
+    .responsive-standings.regional td:nth-child(2) {
+        width: 27%;
+    }
+
+    .responsive-standings.regional th:nth-child(3),
+    .responsive-standings.regional td:nth-child(3) {
+        width: 20%;
+    }
+
+    .responsive-standings.regional th:nth-child(4),
+    .responsive-standings.regional td:nth-child(4) {
+        width: 9%;
+    }
+
+    .responsive-standings.regional th:nth-child(5),
+    .responsive-standings.regional td:nth-child(5) {
+        width: 9%;
+    }
+
+    .responsive-standings.regional th:nth-child(9),
+    .responsive-standings.regional td:nth-child(9) {
+        width: 28%;
+    }
+}
     </style>
 </head>
 <body class="min-h-screen pb-16 custom-scrollbar selection:bg-cyan-500 selection:text-slate-900">
@@ -179,8 +265,8 @@
                         <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700 font-bold">38 Fechas</span>
                     </div>
 
-                    <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-a">
+                    <div class="w-full">
+                        <table class="text-[11px] leading-tight text-left responsive-standings standard">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -264,8 +350,8 @@
                         <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700 font-bold">38 Fechas</span>
                     </div>
 
-                    <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-a">
+                    <div class="w-full">
+                        <table class="text-[11px] leading-tight text-left responsive-standings standard">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -339,8 +425,8 @@
                         <span class="text-[10px] bg-cyan-500/10 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/20 font-bold">30 Fechas Simulación</span>
                     </div>
 
-                    <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-a">
+                    <div class="w-full">
+                        <table class="text-[11px] leading-tight text-left responsive-standings standard">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -370,8 +456,8 @@
                     <span class="px-2 py-0.5 bg-amber-400/10 text-amber-300 text-[10px] font-bold rounded border border-amber-400/20">6 Campeones Regionales</span>
                 </div>
 
-                <div class="w-full" style="overflow-x: auto;">
-                    <table class="text-[11px] leading-tight text-left tabla-post tabla-post-b">
+                <div class="w-full">
+                    <table class="text-[11px] leading-tight text-left responsive-standings regional">
                         <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                             <tr>
                                 <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -424,8 +510,8 @@
                         <span class="text-[10px] bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20 font-bold" id="selectedProvinceRegion">Región Pampeana</span>
                     </div>
 
-                    <div class="w-full overflow-x-auto custom-scrollbar">
-                        <table class="text-[11px] leading-tight text-left min-w-[720px] tabla-post tabla-post-a">
+<div class="w-full">
+    <table class="text-[11px] leading-tight text-left responsive-standings standard">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
@@ -467,8 +553,8 @@
                         <span class="text-[10px] bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">Liguilla Final</span>
                     </div>
 
-                    <div class="w-full" style="overflow-x: auto;">
-                        <table class="text-[11px] leading-tight text-left tabla-post tabla-post-b">
+                    <div class="w-full">
+                        <table class="text-[11px] leading-tight text-left responsive-standings regional">
                             <thead class="bg-slate-900/90 text-slate-400 uppercase text-[9px] font-bold">
                                 <tr>
                                     <th class="py-1.5 px-1 text-center w-6">#</th>
