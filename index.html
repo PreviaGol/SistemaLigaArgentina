@@ -923,9 +923,9 @@
 
         const provincesData = {
             caba_gba: { name: "CABA / GBA", region: "Región GBA", standings: [
-                {"name": "San Martín (B)", "pts": 68, "pj": 30, "pg": 21, "pe": 5, "pp": 4, "dif": "+32", "status": "CAMPEÓN / ASCENSO DIRECTO NACIONAL C", "badge": "bg-emerald-500/20 text-emerald-300 font-bold"},
-                {"name": "Ituzaingó", "pts": 63, "pj": 30, "pg": 19, "pe": 6, "pp": 5, "dif": "+25", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
-                {"name": "JJ Urquiza", "pts": 59, "pj": 30, "pg": 18, "pe": 5, "pp": 7, "dif": "+20", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
+                {"name": "San Martín (B)", "pts": 68, "pj": 30, "pg": 21, "pe": 5, "pp": 4, "dif": "+32", "status": "CAMPEÓN / ASCENSO DIRECTO NACIONAL C GBA", "badge": "bg-emerald-500/20 text-emerald-300 font-bold"},
+                {"name": "Ituzaingó", "pts": 63, "pj": 30, "pg": 19, "pe": 6, "pp": 5, "dif": "+25", "status": "ASCENSO DIRECTO NACIONAL C GBA", "badge": "bg-emerald-500/20 text-emerald-300 font-bold"},
+                {"name": "JJ Urquiza", "pts": 59, "pj": 30, "pg": 18, "pe": 5, "pp": 7, "dif": "+20", "status": "Promoción (vs 14º Nacional C GBA)", badge: "bg-amber-500/20 text-amber-300 font-bold" },
                 {"name": "Liniers", "pts": 55, "pj": 30, "pg": 16, "pe": 7, "pp": 7, "dif": "+14", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
                 {"name": "Sp. Italiano", "pts": 51, "pj": 30, "pg": 15, "pe": 6, "pp": 9, "dif": "+10", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
                 {"name": "UAI Urquiza", "pts": 49, "pj": 30, "pg": 14, "pe": 7, "pp": 9, "dif": "+7", "status": "Permanencia en Nacional D", "badge": "bg-slate-800 text-slate-400"},
@@ -1449,9 +1449,11 @@ function renderProvince(key) {
         let badgeClass = t.badge;
         let statusText = t.status;
 
-        if (index === 0) {
-            rowClass = 'bg-emerald-500/10 text-emerald-200 font-bold';
-        } else if (index === 15) { // El puesto 16 (último)
+if (index === 0 || t.status.includes('ASCENSO')) {
+    rowClass = 'bg-emerald-500/10 font-bold';
+} else if (t.status.includes('Promoción')) {
+    rowClass = 'bg-amber-500/10 text-white font-bold';
+} else if (index === 15) { // El puesto 16 (último)
             rowClass = 'bg-rose-500/10 text-rose-200';
             badgeClass = 'bg-rose-500/20 text-rose-300';
             statusText = 'Desafiliación / Retorno Liga Origen';
